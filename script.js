@@ -39,33 +39,52 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+  // Primeiro, inicialize o EmailJS com sua Public Key.
+// Coloque este trecho logo após a tag de abertura do <body> ou no <head>.
+emailjs.init({
+    publicKey: "nbiRzcc0WbmchmkDU", // Substitua pela sua Public Key
+  });
+  
+  // Seu script de formulário atualizado
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+  
       contactForm.addEventListener('submit', function(event) {
           event.preventDefault();
+  
+          // Validação simples (opcional, mas recomendada)
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
           const message = document.getElementById('message').value;
-
+  
           if (!name || !email || !message) {
               alert('Por favor, preencha todos os campos obrigatórios.');
               return;
           }
-          if (!validateEmail(email)) {
-              alert('Por favor, insira um endereço de e-mail válido.');
-              return;
-          }
-          console.log('Formulário enviado (simulação):', { name, email, message });
-          alert('Mensagem enviada com sucesso! (Simulação)\nEntraremos em contato em breve.');
-          contactForm.reset();
+  
+          // Feedback visual para o usuário
+          submitButton.disabled = true;
+          submitButton.textContent = 'Enviando...';
+  
+          // IDs do seu serviço e template no EmailJS
+          const serviceID = 'service_2xb4178'; 
+          const templateID = 'template_wxbkx66'; 
+  
+          // Envia o formulário
+          emailjs.sendForm(serviceID, templateID, this)
+              .then(() => {
+                  alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                  submitButton.disabled = false;
+                  submitButton.textContent = 'Send Message';
+                  contactForm.reset();
+              }, (err) => {
+                  alert('Ocorreu um erro. Por favor, tente novamente.\n' + JSON.stringify(err));
+                  submitButton.disabled = false;
+                  submitButton.textContent = 'Send Message';
+              });
       });
   }
-
-  function validateEmail(email) {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
-  }
-
   const currentYearSpan = document.getElementById('current-year');
   if (currentYearSpan) {
       currentYearSpan.textContent = new Date().getFullYear();
