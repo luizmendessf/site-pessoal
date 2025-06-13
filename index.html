@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Luiz Mendes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text"></span> </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#tech-stack">Tech Stack</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+              <div class="hero-image-container">
+                <img src="imagens/Foto-luiz.jpeg" alt="Foto de Luiz Mendes" class="profile-image">
+            </div>
+                <div class="hero-text">
+                    <p class="greeting">Olá!</p>
+                    <p class="intro-name">Meu nome é</p>
+                    <h1>Luiz Mendes</h1>
+                    <p class="subtitle">Sou um dev em formação</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="sobre" class="about">
+            <div class="container">
+                <h2>Sobre</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Sou estudante de Ciência da Computação e apaixonado por tecnologia, com foco em transformar conhecimento técnico em soluções práticas.</p>
+                        <p>Tenho experiência em desenvolvimento com Python, JavaScript e C, com uso de frameworks modernos. Atuo como Diretor de Tecnologias da Sociedade Sergipana de Debates (SSD), onde desenvolvi ferramentas para debates competitivos.</p>
+                        <p>Também participo de projetos acadêmicos de pesquisa científica e profissionais. Estou sempre em busca de novos desafios que unam tecnologia, criatividade e propósito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="tech-stack">
+            <div class="container">
+                <h2>Meu Tech Stack</h2>
+                <div class="stack-icons">
+                    <div class="icon-item">
+                        <img src="imagens/png-transparent-logo-python-logos-and-brands-icon-thumbnail.png" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="icon-item">
+                        <img src="imagens/javascript-logo.png" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="icon-item">
+                        <img src="imagens/C_Logo.png" alt="C">
+                        <span>C</span>
+                    </div>
+                    <div class="icon-item">
+                        <img src="imagens/html-logo.png" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="icon-item">
+                        <img src="imagens/css-logo.png" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    </div>
+
+
+                <div class="stack-icons">
+                    <div class="icon-item">
+                      <img src="imagens/react-logo.png" alt="React">
+                      <span>React</span>
+                  </div>
+                  <div class="icon-item">
+                      <img src="imagens/vue-logo.png" alt="Vue.js">
+                      <span>Vue.js</span>
+                  </div>
+                  <div class="icon-item">
+                      <img src="imagens/nodejs-logo.svg" alt="Node.js">
+                      <span>Node.js</span>
+                  </div>
+                  <div class="icon-item">
+                      <img src="imagens/git-logo.png" alt="Git">
+                      <span>Git</span>
+                  </div>
+                  <div class="icon-item">
+                    <img src="imagens/png-transparent-mysql-logo-mysql-database-web-development-computer-software-dolphin-marine-mammal-animals-text-thumbnail.png" alt="MySQL">
+                    <span>MySQL</span>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="projects">
+          <div class="container">
+              <h2>Projetos</h2>
+              <p class="section-subtitle">O que já construí</p>
+              
+              <div class="carousel-container">
+                  <button class="carousel-arrow prev-arrow" aria-label="Projeto anterior"><i class="fas fa-chevron-left"></i></button>
+                  <div class="project-carousel">
+                      <div class="project-card">
+                          <img src="imagens/Screenshot-site.ssd.png" alt="Site da SSD" class="project-image">
+                          <h3>Site da SSD</h3>
+                          <p>Desenvolvimento do site da Sociedade Sergipana de Debates, uma das maiores sociedades acadêmicas de debates competitivos do Brasil. O site implementa funcionalidades úteis aos debatedores e auxilia na divulgação da SSD.</p>
+                          <div class="project-links">
+                              <a href="https://www.ssdebates.com.br" class="btn-secondary" target="_blank" rel="noopener noreferrer">Live Preview</a>
+                              <a href="https://github.com/luizmendessf/Site-SSD" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
+                          </div>
+                      </div>
+                      <div class="project-card">
+                          <img src="imagens/pesquisa.png" alt="Projeto de Pesquisa Científica" class="project-image">
+                          <h3>Pesquisa Científica</h3>
+                          <p>Projeto de pesquisa sobre Controle Supervisório de Sistemas a Eventos Discretos Sob Ataques DoS com Duração e Recorrência Limitadas. A pesquisa contou com a construção de algoritmos em Python para a análise de automatos e resolução de problemas de controle superviório. </p>
+                          <div class="project-links">
+                              <a href="https://github.com/luizmendessf/Automaton-Event-Systems" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
+                          </div>
+                      </div>
+                      <div class="project-card">
+                          <img src="imagens/foto-porta.jpg" alt="Sistema de Controle de Acesso" class="project-image">
+                          <h3>Fechadura com senha por PIC</h3>
+                          <p>Projeto desenvolvido em C com microcontrolador PIC para controle de um portão automático via senha de 4 dígitos. O sistema utilizou botões, display LCD e teclado numérico para operar a fechadura, além de contar com integração bluetooth para abertura e fechamento via aplicativo.</p>
+                          <div class="project-links">
+                              <a href="https://github.com/luizmendessf/Sistema-de-Controle-de-Acesso-por-Senha" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
+                          </div>
+                      </div>
+                      <div class="project-card"> <img src="imagens/screenshot-timer.png" alt="Projeto Timer" class="project-image">
+                        <h3>Timer com PIC</h3>
+                        <p>Projeto em C utilizando microcontrolador PIC para implementar um cronômetro digital. O sistema foi composto por botões para configuração e controle, além de um display LCD responsável por exibir o tempo de forma clara e precisa.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/luizmendessf/Timer-com-PIC-em-C" class="btn-secondary">View Code</a>
+                        </div>
+                      </div>
+                      <div class="project-card"> <img src="imagens/site-duby.png" alt="Duby" class="project-image">
+                          <h3>Conciliação bancária Duby</h3>
+                          <p>Participação no projeto de criação do site de conciliação bancária para a empresa Duby. No projeto, utilizamos o Vue.js para a criação da plataforma. Também foi utilizado MySQL e Node.js para a criação do back end do projeto.</p>
+                          <div class="project-links">
+                              <a href="#" class="btn-secondary">View Code</a>
+                          </div>
+                      </div>
+                      <div class="project-card"> <img src="imagens/Grafos.png" alt="Projeto Exemplo 3" class="project-image">
+                          <h3>Artigo sobre análise de multidões</h3>
+                          <p>Artigo produzido sobre análise de multidões por meio de grafos. Foi realizada uma análise com Python, além de bibliotecas como Pandas e NetworkX, de vídeos de multidões utilizando grafos, verificando formação de grupos entre outras características.</p>
+                          <div class="project-links">
+                              <a href="https://drive.google.com/file/d/1CnFNlTNVMUQEW8bMNNVeW0x5Eu34ke2T/view?usp=sharing" class="btn-secondary">Live Preview</a>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="carousel-arrow next-arrow" aria-label="Próximo projeto"><i class="fas fa-chevron-right"></i></button>
+              </div>
+          </div>
+      </section>
+
+        <section id="contato" class="contact">
+            <div class="container">
+                <h2>Contato</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +55 (79) 99688-5858</p>
+                        <p><i class="fas fa-envelope"></i> luizmendessf@gmail.com</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/luiz-mendes-a8b5a9322/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/luizmendessf" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#tech-stack">Tech Stack</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <p>&copy; <span id="current-year"></span> Luiz Mendes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

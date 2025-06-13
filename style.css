@@ -1,0 +1,791 @@
+/* Reset e Estilos Globais */
+:root {
+  --background-color: #191919;
+  --card-background: #2A2A2A;
+  --section-alt-background: #232323; /* Um pouco diferente do card para variação */
+
+  --text-color: #E0E0E0;
+  --secondary-text-color: #A0A0A0;
+  
+  --primary-color: #0D6EFD; /* Azul Principal */
+  --accent-color: #3B82F6;  /* Azul de Destaque/Hover */
+
+  --border-color: #444444;
+  --font-primary: 'Poppins', sans-serif;
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Sombra mais escura para fundos escuros */
+  --highlight-shadow: 0 4px 15px rgba(13, 110, 253, 0.15); /* Sombra azulada para hover */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3.2rem; /* Ajustado para impacto */
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+h2::after { /* Linha decorativa abaixo dos títulos de seção */
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1em;
+  color: #f8f6f6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 80px 0;
+}
+
+section:nth-child(even) { /* Fundo alternado para seções */
+  background-color: var(--light-gray-background);
+}
+
+
+/* Cabeçalho */
+header {
+  background-color: var(--background-color);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo .logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 25px;
+}
+
+header nav ul li a {
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: var(--accent-color);
+}
+
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+  width: 100%;
+}
+
+
+.menu-toggle {
+  display: none; /* Escondido em desktop */
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
+/* Seção Hero (Home) */
+.hero {
+  background-color: var(--light-gray-background); /* Cor de fundo suave */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px; /* Para compensar o header fixo */
+  text-align: left;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero .greeting {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.hero .intro-name {
+  font-size: 1.2rem;
+  color: #bdbbbb;
+}
+
+.hero h1 {
+  margin: 5px 0 15px; /* Ajuste de margem */
+}
+
+.hero .subtitle {
+  font-size: 1.4rem;
+  color: #a8a5a5;
+  font-weight: 500;
+}
+
+.hero-image-container {
+  max-width: 350px; /* Tamanho da imagem de perfil */
+  flex-shrink: 0;
+}
+
+.profile-image {
+  border-radius: 10%; /* Imagem redonda como no Figma */
+  border: 5px solid var(--background-color);
+  box-shadow: 0 0 25px rgba(0,0,0,0.15);
+}
+
+
+/* Seção Sobre */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin: auto;
+}
+
+.about-image-placeholder {
+  flex-basis: 40%; /* Espaço para a imagem */
+  max-width: 350px;
+}
+
+.about-image-placeholder img {
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.about-text {
+  flex-basis: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+
+/* Seção Tech Stack */
+.tech-stack .stack-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Espaçamento entre ícones */
+  margin-top: 30px;
+}
+
+.tech-stack .icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100px; /* Largura do item */
+  padding: 15px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-stack .icon-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.tech-stack .icon-item img {
+  width: 50px; /* Tamanho do ícone */
+  height: 50px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.tech-stack .icon-item span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* ... (Mantenha todos os seus estilos anteriores para :root, body, header, hero, about, tech-stack, contact, footer, etc.) ... */
+
+/* Seção Projetos - Modificada para Carrossel */
+.projects {
+  overflow: hidden; /* Importante para o carrossel não cortar a página toda */
+  padding-bottom: 100px; /* Adiciona mais espaço abaixo se as setas ficarem muito baixas */
+}
+
+.projects .section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--secondary-text-color); /* Usando variável de cor */
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px; /* Ajuste conforme a largura desejada para a área visível do carrossel */
+  margin: 0 auto;
+  padding: 0 60px; /* Espaço nas laterais para as setas não sobreporem os cards adjacentes */
+  display: flex;
+  align-items: center;
+  /* Adicionado para o efeito de fade-in quando o JS estiver pronto */
+  opacity: 0; 
+  transition: opacity 0.4s ease-in-out 0.2s; /* Delay para o JS calcular primeiro */
+}
+.carousel-container.carousel-ready {
+  opacity: 1;
+}
+
+.project-carousel { /* O div que efetivamente se move com translateX */
+  display: flex;
+  /* Faz o contêiner interno ser tão largo quanto a soma de todos os seus filhos. CRUCIAL! */
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  
+  align-items: center; /* Alinha verticalmente os cards, útil se tiverem alturas diferentes devido ao scale */
+  padding: 30px 0; /* Espaço vertical para acomodar o scale e sombras */
+  /* Transição para o movimento de translate (movimento do carrossel) */
+  transition: transform 0.7s cubic-bezier(0.35, 0, 0.25, 1); /* Transição mais suave */
+}
+
+.project-card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  
+  /* LARGURA BASE DO CARD - O JS usa offsetWidth que considera isso */
+  width: 300px;  /* Ajuste conforme seu design, ex: 280px, 300px, 320px */
+  margin: 0 15px; /* Espaçamento entre cards */
+  flex-shrink: 0; /* IMPEDE QUE OS CARDS SE ENCOLHAM - MUITO IMPORTANTE */
+  
+  /* Estilos padrão para cards não ativos e não adjacentes */
+  opacity: 0.5;
+  transform: scale(0.80); /* Cards bem menores e mais para trás */
+  
+  /* Transições para as mudanças de estado do card individual (ativo, hover nos links) */
+  transition: transform 0.55s cubic-bezier(0.35, 0, 0.25, 1), 
+              opacity 0.55s cubic-bezier(0.35, 0, 0.25, 1),
+              box-shadow 0.55s cubic-bezier(0.35, 0, 0.25, 1);
+  position: relative;
+  z-index: 1; /* Padrão */
+}
+
+.project-card.prev, 
+.project-card.next { /* Cards imediatamente adjacentes ao ativo */
+  opacity: 0.75; /* Um pouco mais visíveis */
+  transform: scale(0.90); /* Um pouco maiores que os demais, mas menores que o ativo */
+  z-index: 5; /* Acima dos cards normais, abaixo do ativo */
+}
+
+.project-card.active {
+  opacity: 1;
+  transform: scale(1.05); /* Card ATIVO é maior e em destaque */
+  z-index: 10; /* Acima de todos os outros cards */
+  box-shadow: var(--highlight-shadow); /* Sua variável de sombra de destaque */
+}
+
+
+.project-image {
+  width: 100%;
+  height: 180px; 
+  object-fit: cover;
+  border-top-left-radius: 12px; /* Para acompanhar o card */
+  border-top-right-radius: 12px;
+}
+
+.project-card h3 {
+  padding: 18px 18px 8px; 
+  font-size: 1.3rem; 
+  color: var(--text-color); /* Certifique-se de que a cor do texto está definida */
+}
+
+.project-card p {
+  padding: 0 18px;
+  font-size: 0.9rem; 
+  flex-grow: 1;
+  line-height: 1.5;
+  color: var(--secondary-text-color); /* Certifique-se de que a cor do texto está definida */
+}
+
+.project-links {
+  padding: 15px 18px 18px;
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.project-links .btn-secondary {
+  font-size: 0.85rem;
+  padding: 8px 15px;
+}
+
+
+/* Setas do Carrossel */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centraliza verticalmente */
+  background-color: rgba(42, 42, 42, 0.6); /* Fundo escuro semi-transparente para as setas */
+  color: #E0E0E0; /* Cor do ícone da seta */
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 20; /* Acima dos cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-arrow:hover {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  transform: translateY(-50%) scale(1.1); /* Mantém centralizado no Y ao escalar */
+  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+}
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background-color: rgba(42, 42, 42, 0.4);
+}
+
+.prev-arrow {
+  left: 10px; /* Posição da seta esquerda, ajustada devido ao padding do container */
+}
+
+.next-arrow {
+  right: 10px; /* Posição da seta direita */
+}
+
+/* Ajustes de Responsividade para o Carrossel (Revisados) */
+@media (max-width: 992px) {
+  .carousel-container {
+      padding: 0 40px; /* Menos espaço para setas em tablets */
+  }
+  .project-card {
+      width: 270px; /* Cards um pouco menores em tablets */
+      margin: 0 10px;
+  }
+  /* A lógica JS já tenta centralizar o ativo. O CSS define como os outros aparecem. */
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+      padding: 0 15px; /* Ainda menos espaço lateral */
+  }
+  .project-card {
+      width: 240px; /* Cards ainda menores */
+      margin: 0 8px;
+  }
+  /* Em telas pequenas, pode ser melhor mostrar menos dos cards laterais
+     ou apenas o ativo e partes dos adjacentes */
+  .project-card:not(.active):not(.prev):not(.next) {
+      opacity: 0.3; /* Cards distantes ficam bem apagados */
+      transform: scale(0.75);
+  }
+   .carousel-arrow {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+  }
+  .prev-arrow { left: 5px; } /* Aproxima mais as setas */
+  .next-arrow { right: 5px; }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+      padding: 0 10px;
+  }
+  .project-card {
+      width: 220px; /* Largura para celulares */
+      margin: 0 5px;}
+  }
+
+/* Botões */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  margin-right: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  transform: translateY(-2px);
+}
+
+
+/* Seção Contato */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap; /* Para responsividade */
+  gap: 40px;
+  align-items: flex-start; /* Alinha os itens no topo */
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px; /* Largura mínima para informações de contato */
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-info p i {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-right: 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.contact-form {
+  flex: 2;
+  min-width: 300px; /* Largura mínima para o formulário */
+  background-color: var(--card-background);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(59, 13, 108, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.contact-form button[type="submit"] {
+  width: 100%; /* Botão ocupa toda a largura */
+  padding: 12px;
+  font-size: 1.1rem;
+}
+
+
+/* Rodapé */
+footer {
+  background-color: #191919;
+  color: var(--light-text-color);
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-nav ul li a {
+  color: #ccc; /* Cor mais suave para links do rodapé */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: rgb(157, 156, 156);
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0;
+}
+
+/* Estilos para Header "Scrolled" (opcional, via JS) */
+header.scrolled {
+  background-color: #232323; /* Fundo com leve transparência */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .hero-content {
+      flex-direction: column-reverse; /* Imagem acima do texto */
+      text-align: center;
+  }
+  .hero-text {
+      max-width: 100%;
+  }
+  .hero-image-container {
+      margin-bottom: 30px;
+      max-width: 300px;
+  }
+
+  .about-content {
+      flex-direction: column;
+      text-align: center;
+  }
+  .about-image-placeholder {
+      margin-bottom: 30px;
+      max-width: 300px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+
+  header nav {
+      display: none; /* Esconde navegação normal */
+      position: absolute;
+      top: 100%; /* Abaixo do header */
+      left: 0;
+      width: 100%;
+      background-color: var(--background-color);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      flex-direction: column; /* Itens empilhados */
+  }
+
+  header nav.active {
+      display: flex; /* Mostra quando ativo */
+  }
+
+  header nav ul {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  header nav ul li {
+      margin: 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+  }
+  header nav ul li:last-child {
+      border-bottom: none;
+  }
+
+  header nav ul li a {
+      padding: 15px;
+      display: block; /* Ocupa toda a largura do li */
+  }
+  header nav ul li a::after { /* Remove sublinhado animado no mobile menu */
+      display: none;
+  }
+
+  .menu-toggle {
+      display: block; /* Mostra o botão hamburguer */
+  }
+
+  .contact-content {
+      flex-direction: column;
+  }
+  .contact-info, .contact-form {
+      width: 100%;
+      max-width: 500px; /* Limita largura em telas menores */
+      margin: 0 auto;
+  }
+  .contact-info {
+      text-align: center;
+  }
+  .social-links {
+      justify-content: center;
+      display: flex; /* Para centralizar os ícones */
+  }
+  .social-links a:last-child {
+      margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  .hero .subtitle { font-size: 1.1rem; }
+
+  .tech-stack .icon-item {
+      width: 80px; /* Ícones menores */
+      padding: 10px;
+  }
+  .tech-stack .icon-item img {
+      width: 40px;
+      height: 40px;
+  }
+
+  .project-grid {
+      grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+  }
+
+  .btn-primary, .btn-secondary {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+      padding: 10px;
+      font-size: 0.95rem;
+  }
+  .contact-form button[type="submit"] {
+      padding: 10px;
+      font-size: 1rem;
+  }
+}
