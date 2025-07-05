@@ -324,16 +324,10 @@ header nav ul li a.active::after {
 }
 
 .project-carousel { /* O div que efetivamente se move com translateX */
-  display: flex;
-  /* Faz o contêiner interno ser tão largo quanto a soma de todos os seus filhos. CRUCIAL! */
-  width: -moz-max-content;
-  width: -webkit-max-content;
-  width: max-content;
-  
-  align-items: center; /* Alinha verticalmente os cards, útil se tiverem alturas diferentes devido ao scale */
-  padding: 30px 0; /* Espaço vertical para acomodar o scale e sombras */
-  /* Transição para o movimento de translate (movimento do carrossel) */
-  transition: transform 0.7s cubic-bezier(0.35, 0, 0.25, 1); /* Transição mais suave */
+  display: flex; /* <-- display: flex com flex-shrink: 0 nos filhos já resolve a largura */
+  align-items: center; 
+  padding: 30px 0;
+  transition: transform 0.7s cubic-bezier(0.35, 0, 0.25, 1);
 }
 
 .project-card {
